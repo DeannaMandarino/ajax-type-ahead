@@ -50,3 +50,55 @@ body, .main, .search-section {
   white-space: nowrap; /* Prevent text from breaking */
   overflow: hidden; /* Prevent overflow */
 }
+
+.search-form__input {
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 0.78rem + 0.6vw, 1.5rem);
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 2.3px;
+  transition: outline 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for focus state */
+}
+
+.search-form__input:focus {
+  outline: 2px solid var(--input-focus-color);
+  box-shadow: 0 0 7px var(--text-color);
+}
+
+.search-form__matches {
+  border-radius: 0.5rem;
+  background-color: var(--search-background-color);
+  width: 99%;
+  margin-left: 2px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.search-form__match {
+  list-style: none;
+  padding: 0.5rem;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-form__match:first-of-type {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.search-form__match:last-of-type {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.search-form__match:hover {
+  background-color: var(--match-hover-color);
+}
+
+.search-form__match:focus {
+  background-color: var(--match-hover-color);
+}
+
+.highlight {
+  background-color: var(--highlight-color);
+}
