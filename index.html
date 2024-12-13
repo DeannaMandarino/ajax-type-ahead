@@ -4,17 +4,29 @@
   <!-- Meta tags for accessibility and SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="A search tool for finding cities or states through a type-ahead feature using Ajax.">
   <meta name="author" content="Deanna Mandarino">
 
   <!-- Link to external CSS stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- Page title for browser tab -->
-  <title>Ajax Type Ahead</title>
+  <title>City and State Search with Ajax Type Ahead</title>
 </head>
 <body>
-  
+  <main class="main">
+    <section class="search-section">
+      <form class="search-form" aria-labelledby="search-label">
+        <label for="search-input" id="search-label" class="search-form__label visually-hidden">Search for a city or state</label>
+        <input class="search-form__input" id="search-input" type="text" placeholder="City or State" aria-label="City or State search">
+        <ul class="search-form__matches">
+          <li class="search-form__match">Filter for a city</li>
+          <li class="search-form__match">or a state</li>
+        </ul>
+      </form>
+    </section>
+  </main>
+
   <!-- External JavaScript file linked with defer to improve page load -->
   <script src="script.js" defer></script>
 </body>
