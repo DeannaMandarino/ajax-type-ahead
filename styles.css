@@ -40,7 +40,7 @@ body, .main, .search-section {
 
 /* Search form styles */
 .search-form {
-  margin-top: 5rem; /* 80px */
+  margin-top: 6.25rem; /* 100px */
   margin-bottom: 0;
   width: 65%;
 }
@@ -61,7 +61,7 @@ body, .main, .search-section {
 
 /* Styles for the search input field */
 .search-form__input {
-  padding: 0.5rem;
+  padding: 0.8rem;
   width: 100%;
   font-size: 0.9rem;
   font-size: clamp(0.9rem, 0.78rem + 0.6vw, 1.5rem);
