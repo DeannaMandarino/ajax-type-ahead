@@ -89,6 +89,8 @@ body, .main, .search-section {
 
 /* Individual match item styling */
 .search-form__match {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   padding: 0.5rem;
   width: 100%;
