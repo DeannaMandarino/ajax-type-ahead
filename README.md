@@ -16,6 +16,8 @@ This project implements a search functionality for cities and states, allowing u
 - Uses the Fetch API to retrieve city and state data from an external JSON file.
 - Highlights the search term within the city and state names.
 
+![City and State Search Screenshot](screenshot/city-and-state-search-screenshot.jpeg)
+
 ## Technologies Used
 
 - HTML
