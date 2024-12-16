@@ -10,6 +10,16 @@
   <!-- Link to external CSS stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Preconnect to improve font loading performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Link to Google Fonts (Roboto)-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Favicon for the page -->
+  <link rel="icon" href="images/search-favicon.png" type="image/x-icon">
+
   <!-- Page title for browser tab -->
   <title>City and State Search with Ajax Type Ahead</title>
 </head>
@@ -17,11 +27,14 @@
   <main class="main">
     <section class="search-section">
       <form class="search-form" aria-labelledby="search-label">
+        <!-- Visually hidden label for accessibility, associated with the search input -->
         <label for="search-input" id="search-label" class="search-form__label visually-hidden">Search for a city or state</label>
-        <input class="search-form__input" id="search-input" type="text" placeholder="City or State" aria-label="City or State search">
-        <ul class="search-form__matches">
-          
-        </ul>
+
+        <!-- Input field for users to type their search query -->
+        <input class="search-form__input" id="search-input" type="text" placeholder="City or State" aria-label="Search for a city or state">
+
+        <!-- Unordered list to display dynamic matches below the search input -->
+        <ul class="search-form__matches"></ul>
       </form>
     </section>
   </main>
