@@ -7,6 +7,7 @@
   --highlight-color: rgba(0, 9, 129, 0.2);
 }
 
+/* Universal reset to eliminate default padding, margin, and border-box model */
 *,
 *::before,
 *::after {
@@ -15,32 +16,41 @@
   box-sizing: border-box; /* Ensures border and padding do not affect element width/height */
 }
 
-/* 1rem = 16px */
+/* Basic body styles, 1rem = 16px */
 body {
   background-image: url('images/city-background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
   color: var(--text-color);
   font-size: 0.9rem;
   font-size: clamp(0.9rem, 0.78rem + 0.6vw, 1.5rem);
 }
 
+/* Flexbox container to make the body, main, and section full height and aligned */
 body, .main, .search-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: 100vh;
 }
 
+/* Search form styles */
 .search-form {
+  margin-top: 5rem; /* 80px */
+  margin-bottom: 0;
   width: 65%;
-  margin: 80px auto;
 }
 
+/* Visually hidden label for accessibility purposes */
 .visually-hidden {
   position: absolute; /* Remove the element from the flow */
-  width: 1px; /* Make the element nearly invisible */
-  height: 1px; /* Make the element nearly invisible */
-  margin: -1px; /* Remove any unnecessary margin */
+  width: 0.0625rem; /* Make the element nearly invisible */
+  height: 0.0625rem; /* Make the element nearly invisible */
+  margin: -0.0625rem; /* Remove any unnecessary margin */
   padding: 0; /* Remove padding */
   border: 0; /* Remove any borders */
   clip: rect(0, 0, 0, 0); /* Clip the element to zero size */
@@ -49,6 +59,7 @@ body, .main, .search-section {
   overflow: hidden; /* Prevent overflow */
 }
 
+/* Styles for the search input field */
 .search-form__input {
   padding: 0.5rem;
   width: 100%;
@@ -56,24 +67,27 @@ body, .main, .search-section {
   font-size: clamp(0.9rem, 0.78rem + 0.6vw, 1.5rem);
   border: none;
   border-radius: 1rem;
-  margin-bottom: 2.3px;
+  margin-bottom: 0.14375rem;
   transition: outline 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for focus state */
 }
 
+/* Input field focus state styling */
 .search-form__input:focus {
-  outline: 2px solid var(--input-focus-color);
-  box-shadow: 0 0 7px var(--text-color);
+  outline: 0.125rem solid var(--input-focus-color);
+  box-shadow: 0 0 0.5625rem var(--input-focus-color);
 }
 
+/* Styling for the matches list */
 .search-form__matches {
   border-radius: 0.5rem;
   background-color: var(--search-background-color);
   width: 99%;
-  margin-left: 2px;
+  margin-left: 0.125rem;
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 25rem;
 }
 
+/* Individual match item styling */
 .search-form__match {
   list-style: none;
   padding: 0.5rem;
@@ -81,6 +95,7 @@ body, .main, .search-section {
   transition: background-color 0.2s ease-in-out;
 }
 
+/* First and last match item with rounded corners */
 .search-form__match:first-of-type {
   border-radius: 0.5rem 0.5rem 0 0;
 }
@@ -89,14 +104,24 @@ body, .main, .search-section {
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
+/* Hover effect for match items */
 .search-form__match:hover {
   background-color: var(--match-hover-color);
 }
 
+/* Focus state for match items */
 .search-form__match:focus {
   background-color: var(--match-hover-color);
 }
 
+/* Highlighting the search term inside matches */
 .highlight {
   background-color: var(--highlight-color);
+}
+
+/* Media query for large screens (min-width: 1000px) */
+@media (min-width: 62.5em) {
+  body {
+    background-position: 50% 62%;
+  }
 }
